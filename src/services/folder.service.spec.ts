@@ -137,6 +137,12 @@ describe('FolderService', () => {
     expect(await service.delete({ folderKey, userId: 1 })).toEqual(true);
   });
 
+  /**
+   * Error handling
+   * Test if the service is throwing an error
+   */
+
+  // Create folder error handling
   it('should not delete a folder if user does not have access', async () => {
     const folderKey = uuidv4();
     checkRoleService.checkRole.mockResolvedValue(false);
@@ -145,12 +151,6 @@ describe('FolderService', () => {
     );
   });
 
-  /**
-   * Error handling
-   * Test if the service is throwing an error
-   */
-
-  // Create folder error handling
   it('should throw an conflict error when creating a same folder', async () => {
     const folderName = 'test';
     const parentFolderKey = uuidv4();

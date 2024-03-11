@@ -125,7 +125,6 @@ export class FolderService {
         .catch(() => {
           throw new InternalServerErrorException('Failed to delete folder');
         });
-      return true;
     });
   }
 }

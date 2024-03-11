@@ -24,7 +24,7 @@ export interface IDeleteFolderServiceInput {
   userId: number & tags.Type<'uint32'>;
 }
 
-export type IDeleteFolderServiceOutput = boolean;
+export type IDeleteFolderServiceOutput = void;
 
 export const validateCreateFolderRequestBody =
   typia.createValidate<ICreateFolderRequestBody>();

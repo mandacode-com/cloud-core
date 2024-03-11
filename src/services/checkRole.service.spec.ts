@@ -55,6 +55,12 @@ describe('CheckRoleService', () => {
     expect(result).toBe(true);
   });
 
+  /**
+   * Failure handling
+   * Test if the service is failed
+   */
+
+  // Check role failure handling
   it('should return false if user does not have role', async () => {
     const folderKey = uuidv4();
     const userId = 1;
@@ -77,12 +83,6 @@ describe('CheckRoleService', () => {
     expect(result).toBe(false);
   });
 
-  /**
-   * Failure handling
-   * Test if the service is failed
-   */
-
-  // Check role failure handling
   it('should throw NotFoundException if folder does not exist', async () => {
     const folderKey = uuidv4();
     const userId = 1;

@@ -55,4 +55,19 @@ describe('FolderController', () => {
       'Folder created',
     );
   });
+
+  it('should delete a folder', async () => {
+    const folderKey = uuidv4();
+    const userId = 1;
+    const deleteFolderRequestBody = {
+      userId,
+      payload: {
+        uuidKey: '1234',
+      },
+    };
+    folderService.delete = jest.fn().mockResolvedValue({});
+    expect(
+      await controller.deleteFolder(deleteFolderRequestBody, folderKey),
+    ).toEqual('Folder deleted');
+  });
 });
